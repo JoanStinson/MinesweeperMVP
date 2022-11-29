@@ -26,9 +26,14 @@ namespace JGM.Minesweeper.Models
         private readonly int[,] grid;
         private readonly int minesAmount;
 
+        public int Rows { get; }
+        public int Columns { get; }
+
         public BoardModel(int rows, int columns, int minesAmount)
         {
             grid = new int[rows, columns];
+            Rows = rows;
+            Columns = columns;
             this.minesAmount = minesAmount;
             var mineCoordinates = new HashSet<Coordinate>();
 
@@ -45,19 +50,106 @@ namespace JGM.Minesweeper.Models
                 grid[coordinate.Row, coordinate.Column] = (int)CellValue.Mine;
             }
 
+            foreach (var mineCoordinate in mineCoordinates)
+            {
+                List<Coordinate> neighborsCoordinates = new List<Coordinate>();
+
+                var newCoordinate = new Coordinate(mineCoordinate.Row - 1, mineCoordinate.Column - 1);
+                if (IsValidCoordinate(newCoordinate))
+                {
+                    if (grid[newCoordinate.Row, newCoordinate.Column] != 9)
+                    {
+                        neighborsCoordinates.Add(newCoordinate);
+                    }
+                }
+
+                newCoordinate = new Coordinate(mineCoordinate.Row - 1, mineCoordinate.Column);
+                if (IsValidCoordinate(newCoordinate))
+                {
+                    if (grid[newCoordinate.Row, newCoordinate.Column] != 9)
+                    {
+                        neighborsCoordinates.Add(newCoordinate);
+                    }
+                }
+
+                newCoordinate = new Coordinate(mineCoordinate.Row - 1, mineCoordinate.Column + 1);
+                if (IsValidCoordinate(newCoordinate))
+                {
+                    if (grid[newCoordinate.Row, newCoordinate.Column] != 9)
+                    {
+                        neighborsCoordinates.Add(newCoordinate);
+                    }
+                }
+
+                newCoordinate = new Coordinate(mineCoordinate.Row, mineCoordinate.Column - 1);
+                if (IsValidCoordinate(newCoordinate))
+                {
+                    if (grid[newCoordinate.Row, newCoordinate.Column] != 9)
+                    {
+                        neighborsCoordinates.Add(newCoordinate);
+                    }
+                }
+
+                newCoordinate = new Coordinate(mineCoordinate.Row, mineCoordinate.Column + 1);
+                if (IsValidCoordinate(newCoordinate))
+                {
+                    if (grid[newCoordinate.Row, newCoordinate.Column] != 9)
+                    {
+                        neighborsCoordinates.Add(newCoordinate);
+                    }
+                }
+
+                newCoordinate = new Coordinate(mineCoordinate.Row + 1, mineCoordinate.Column - 1);
+                if (IsValidCoordinate(newCoordinate))
+                {
+                    if (grid[newCoordinate.Row, newCoordinate.Column] != 9)
+                    {
+                        neighborsCoordinates.Add(newCoordinate);
+                    }
+                }
+
+                newCoordinate = new Coordinate(mineCoordinate.Row + 1, mineCoordinate.Column);
+                if (IsValidCoordinate(newCoordinate))
+                {
+                    if (grid[newCoordinate.Row, newCoordinate.Column] != 9)
+                    {
+                        neighborsCoordinates.Add(newCoordinate);
+                    }
+                }
+
+                newCoordinate = new Coordinate(mineCoordinate.Row + 1, mineCoordinate.Column + 1);
+                if (IsValidCoordinate(newCoordinate))
+                {
+                    if (grid[newCoordinate.Row, newCoordinate.Column] != 9)
+                    {
+                        neighborsCoordinates.Add(newCoordinate);
+                    }
+                }
+
+                foreach (var neighborCoordinate in neighborsCoordinates)
+                {
+                    grid[neighborCoordinate.Row, neighborCoordinate.Column]++;
+                }
+            }
+
             StringBuilder boardView = new StringBuilder();
 
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
                 {
-                    boardView.Append(grid[i, j] == 9 ? "* " : grid[i, j].ToString());
+                    boardView.Append(grid[i, j].ToString());
                 }
 
                 boardView.Append("\n");
             }
 
             Debug.Log(boardView);
+        }
+
+        private bool IsValidCoordinate(Coordinate newCoordinate)
+        {
+            return newCoordinate.Row < Rows && newCoordinate.Row >= 0 && newCoordinate.Column < Columns && newCoordinate.Column >= 0;
         }
     }
 
