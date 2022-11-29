@@ -1,0 +1,17 @@
+{
+    "name": "JGM.Minesweeper.Controllers",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8566eb72c058bf34692c1d3b11626ec5",
+        "GUID:4497c70cf6467654d95b8aa60cd4f8d0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,16 @@
+{
+    "name": "JGM.Minesweeper.Views.UnityUI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ee39ed09839c6944e899b62cbacd7387"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

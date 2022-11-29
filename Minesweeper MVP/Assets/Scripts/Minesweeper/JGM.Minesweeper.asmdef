@@ -1,0 +1,17 @@
+{
+    "name": "JGM.Minesweeper",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f9f9de9bf6e04c84eaf89d8a1f15f16e",
+        "GUID:5b42e230c9c767448a051f33c5cd4631"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
