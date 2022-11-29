@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace JGM.Minesweeper
 {
-    [RequireComponent(typeof(IMinesweeperView))]
+    //[RequireComponent(typeof(IMinesweeperView))]
     public class Minesweeper : MonoBehaviour
     {
         private IMinesweeperView minesweeperView;
@@ -12,7 +12,7 @@ namespace JGM.Minesweeper
 
         private void Awake()
         {
-            minesweeperView = gameObject.GetComponent<IMinesweeperView>();
+            //minesweeperView = gameObject.GetComponent<IMinesweeperView>();
             minesweeperController = new MinesweeperController();
             minesweeperController.StartGame();
         }

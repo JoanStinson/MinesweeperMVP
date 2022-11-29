@@ -69,10 +69,13 @@ namespace JGM.Minesweeper.Controllers
 
     internal class StartController : IOperationController
     {
+        public BoardModel GridModel => gridModel;
+        public BoardModel gridModel;
+
         public void Execute()
         {
             var gridBuilderController = new GridBuilderController();
-            gridBuilderController.Build();
+            gridModel = gridBuilderController.Build();
         }
     }
 
@@ -88,9 +91,9 @@ namespace JGM.Minesweeper.Controllers
 
     public class GridBuilderController
     {
-        public GridModel Build()
+        public BoardModel Build()
         {
-            return new GridModel();
+            return new BoardModel(12, 6, 10);
         }
     }
 
