@@ -4,6 +4,11 @@ using UnityEngine;
 
 namespace JGM.Minesweeper.Models
 {
+    public class GridModel
+    {
+        private int[,] grid;
+    }
+
     public class GameModel : MonoBehaviour
     {
         // Start is called before the first frame update
