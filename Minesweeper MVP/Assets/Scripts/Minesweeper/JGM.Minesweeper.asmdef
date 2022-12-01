@@ -2,7 +2,7 @@
     "name": "JGM.Minesweeper",
     "rootNamespace": "",
     "references": [
-        "GUID:f9f9de9bf6e04c84eaf89d8a1f15f16e",
+        "GUID:ee39ed09839c6944e899b62cbacd7387",
         "GUID:5b42e230c9c767448a051f33c5cd4631"
     ],
     "includePlatforms": [],

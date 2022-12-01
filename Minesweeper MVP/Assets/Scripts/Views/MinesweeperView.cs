@@ -4,6 +4,11 @@ using UnityEngine;
 
 namespace JGM.Minesweeper.Views
 {
+    public interface IMinesweeperView
+    {
+
+    }
+
     public class MinesweeperView : MonoBehaviour
     {
         // Start is called before the first frame update
